@@ -1,0 +1,15 @@
+.main {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+
+.form-post {
+  display: flex;
+  width: 100%;
+  
+}
+
+.container__form {
+  width: 100%;
+}

@@ -1,0 +1,297 @@
+{
+  "nroOpeLemu": 12977,
+  "Cliente": {
+    "rutCliente": "79863070",
+    "tipoDocumento": 31,
+    "codEjecutivo": 3
+  },
+  "ResumenOP": {
+    "canDoctos": 1,
+    "monDoctos": 16536665,
+    "monAnticipado": 16536665,
+    "tasNegocio": 1.6,
+    "diasFinanciamiento": 27,
+    "tasMora": 3.41,
+    "porAnticipo": 100.0,
+    "codBanco": 12,
+    "difPrecio": 238128,
+    "desCancelacion": "431991",
+    "mntGastos": 30000,
+    "DetalleGastos": [
+      {
+        "codGasto": 27,
+        "montoGasto": 30000
+      }
+    ],
+    "comFijaOperacion": 50000,
+    "comFijaDocumento": 0,
+    "comPorcOperacion": 0,
+    "comPorcDocumento": 0,
+    "montoAplicaciones": 16203337.249999998
+  },
+  "Deudor": [
+    {
+      "rutDeudor": "76584013",
+      "nomDeudor": "ARQUITECTURA MARCO ANTONIO VERDUGO MARTINEZ E.I.R.L. ",
+      "Documentos": [
+        {
+          "folio": 89140,
+          "fchEmision": "2022-03-31",
+          "fchVcto": "2022-05-10",
+          "mntDoc": 16536665,
+          "conVerificacion": "S",
+          "estadoVerificacion": 11,
+          "mntAnticipo": 16536665.0,
+          "plazoVcto": 27,
+          "mntDifPrecio": 238128.0
+        }
+      ]
+    }
+  ],
+  "AplicacionDoc": {
+    "apliTasaMora": 3.41,
+    "ApliDeudor": [
+      {
+        "apliRutDeudor": "76079435",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17802,
+            "apliNumDoc": 88478,
+            "apliMontoAplicado": 1752052,
+            "apliMontoIntMora": 11868
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76079435",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17929,
+            "apliNumDoc": 88448,
+            "apliMontoAplicado": 37816,
+            "apliMontoIntMora": 341
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76083889",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17353,
+            "apliNumDoc": 88184,
+            "apliMontoAplicado": 8743,
+            "apliMontoIntMora": 69
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76129210",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 16992,
+            "apliNumDoc": 88063,
+            "apliMontoAplicado": 37626,
+            "apliMontoIntMora": 548
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76129210",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 16992,
+            "apliNumDoc": 88067,
+            "apliMontoAplicado": 123902,
+            "apliMontoIntMora": 2213
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76129210",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 16992,
+            "apliNumDoc": 88083,
+            "apliMontoAplicado": 35760,
+            "apliMontoIntMora": 639
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76311447",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17802,
+            "apliNumDoc": 88373,
+            "apliMontoAplicado": 1059395,
+            "apliMontoIntMora": 15427
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76311447",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17802,
+            "apliNumDoc": 88485,
+            "apliMontoAplicado": 1157723,
+            "apliMontoIntMora": 36055
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76349975",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 16572,
+            "apliNumDoc": 87246,
+            "apliMontoAplicado": 207651,
+            "apliMontoIntMora": 3481
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76429852",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17802,
+            "apliNumDoc": 88386,
+            "apliMontoAplicado": 1958909,
+            "apliMontoIntMora": 13269
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "76660390",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17802,
+            "apliNumDoc": 88409,
+            "apliMontoAplicado": 52603,
+            "apliMontoIntMora": 824
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "77020246",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17802,
+            "apliNumDoc": 88613,
+            "apliMontoAplicado": 506061,
+            "apliMontoIntMora": 86440
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "77526480",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17802,
+            "apliNumDoc": 88500,
+            "apliMontoAplicado": 442964,
+            "apliMontoIntMora": 6939
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "77526480",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17802,
+            "apliNumDoc": 88501,
+            "apliMontoAplicado": 362671,
+            "apliMontoIntMora": 5681
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "77819950",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 16831,
+            "apliNumDoc": 87935,
+            "apliMontoAplicado": 2838649,
+            "apliMontoIntMora": 172726
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "78549950",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17180,
+            "apliNumDoc": 88109,
+            "apliMontoAplicado": 827133,
+            "apliMontoIntMora": 8376
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "78549950",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17583,
+            "apliNumDoc": 88477,
+            "apliMontoAplicado": 4494726,
+            "apliMontoIntMora": 114514
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "84506000",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 17929,
+            "apliNumDoc": 88620,
+            "apliMontoAplicado": 231268,
+            "apliMontoIntMora": 2084
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "96557350",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 16831,
+            "apliNumDoc": 87971,
+            "apliMontoAplicado": 33517,
+            "apliMontoIntMora": 302
+          }
+        ]
+      },
+      {
+        "apliRutDeudor": "96792430",
+        "DetPago": [
+          {
+            "apliTipDoc": 31,
+            "apliNumOpe": 16992,
+            "apliNumDoc": 87929,
+            "apliMontoAplicado": 34169,
+            "apliMontoIntMora": 232
+          }
+        ]
+      }
+    ]
+  },
+  "AplicacionCxc": []
+}

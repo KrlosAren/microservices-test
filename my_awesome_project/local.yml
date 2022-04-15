@@ -1,0 +1,142 @@
+version: '3'
+
+volumes:
+  my_awesome_project_local_postgres_data: {}
+  my_awesome_project_local_postgres_data_backups: {}
+
+services:
+  # django: &django
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: my_awesome_project_local_django
+
+    platform: linux/x86_64
+    depends_on:
+      - postgres
+      - redis
+      - mailhog
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - '8000:8000'
+    command: /start
+    expose:
+      - 8000
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.django.rule=Host(`api.django.localhost`)'
+
+  reverse-proxy:
+    image: traefik:v2.6
+    command:
+      - '--log.level=DEBUG'
+      - '--api.insecure=true'
+      - '--providers.docker=true'
+      - '--providers.docker.exposedbydefault=false'
+      - '--entrypoints.web.address=:80'
+    ports:
+      - '80:80'
+      - '8080:8080'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - django
+
+  node:
+    build:
+      context: ../node_app
+      dockerfile: ../node_app/Dockerfile
+    image: my_awesome_project_local_node
+    platform: linux/x86_64
+    volumes:
+      - ../node_app:/app:z
+    ports:
+      - '4500:4500'
+    restart: on-failure
+    command: npm run dev
+    expose:
+      - 4500
+    depends_on:
+      - postgres
+      - redis
+      - mailhog
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.node.rule=Host(`api.node.localhost`)'
+
+  client:
+    build:
+      context: ../client
+      dockerfile: ../client/Dockerfile
+    image: my_awesome_project_local_client
+    platform: linux/x86_64
+    volumes:
+      - ../client:/app:z
+    ports:
+      - '3000:3000'
+    command: npm run dev
+    depends_on:
+      - django
+      - node
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: my_awesome_project_production_postgres
+    volumes:
+      - my_awesome_project_local_postgres_data:/var/lib/postgresql/data:Z
+      - my_awesome_project_local_postgres_data_backups:/backups:z
+    env_file:
+      - ./.envs/.local/.postgres
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    ports:
+      - '8025:8025'
+
+  redis:
+    image: redis:6
+    container_name: my_awesome_project_local_redis
+
+  celeryworker:
+    # <<: *django
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    image: my_awesome_project_local_celeryworker
+    depends_on:
+      - redis
+      - postgres
+      - mailhog
+    ports: []
+    command: /start-celeryworker
+
+  celerybeat:
+    # <<: *django
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    image: my_awesome_project_local_celerybeat
+    depends_on:
+      - redis
+      - postgres
+      - mailhog
+    ports: []
+    command: /start-celerybeat
+
+  flower:
+    # <<: *django
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    image: my_awesome_project_local_flower
+    container_name: my_awesome_project_local_flower
+    ports:
+      - '5555:5555'
+    command: /start-flower
